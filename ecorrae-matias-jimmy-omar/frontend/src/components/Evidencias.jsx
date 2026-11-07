@@ -6,7 +6,7 @@ import { Confirmar, useCarga, useToast } from './ui'
 const PERMITIDOS = ['image/jpeg', 'image/png', 'image/webp', 'application/pdf']
 const MAX_MB = 10
 
-/** Carga y listado de evidencias de un dispositivo o de un lote. */
+
 export default function Evidencias({ dispositivoId, loteId, onCambio }) {
   const filtro = dispositivoId ? { dispositivo_id: dispositivoId } : { lote_id: loteId }
   const { datos, recargar } = useCarga(() => api.get('/evidencias', filtro), [dispositivoId, loteId])
