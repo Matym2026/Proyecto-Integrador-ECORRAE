@@ -15,7 +15,7 @@ export default function LoteDetalle() {
     api.get('/movimientos', { lote_id: id }),
   ]), [id])
   const [lote, disps, movs] = carga.datos || []
-  const [modal, setModal] = useState(null) // agregar | editar | cerrar | eliminar | TRASLADO | ENTREGA_DESTINO
+  const [modal, setModal] = useState(null) 
   const toast = useToast()
   const navigate = useNavigate()
   const hecho = (msg) => { toast(msg); setModal(null); carga.recargar() }
