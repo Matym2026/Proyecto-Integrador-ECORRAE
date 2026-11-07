@@ -81,7 +81,7 @@ def actualizar(id_: int, datos: s.LoteUpdate, db: Session = Depends(get_db)):
 @router.delete("/{id_}", status_code=status.HTTP_204_NO_CONTENT)
 def eliminar(id_: int, db: Session = Depends(get_db)):
     lote = _lote_abierto(db, id_)
-    for d in lote.dispositivos:  # los equipos vuelven a estar disponibles
+    for d in lote.dispositivos:  
         d.estado, d.lote_id = "EVALUADO", None
     claves = db.scalars(select(m.Evidencia.clave_objeto).where(m.Evidencia.lote_id == id_)).all()
     db.delete(lote)
