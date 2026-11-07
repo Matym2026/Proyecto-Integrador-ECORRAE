@@ -1,7 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useState } from 'react'
 import { etiqueta } from '../constantes'
 
-/* ---------- Notificaciones (toasts) ---------- */
+
 const ToastCtx = createContext(() => {})
 export const useToast = () => useContext(ToastCtx)
 
@@ -22,7 +22,7 @@ export function ToastProvider({ children }) {
   )
 }
 
-/* ---------- Carga de datos ---------- */
+
 export function useCarga(fn, deps = []) {
   const [datos, setDatos] = useState(null)
   const [error, setError] = useState(null)
@@ -44,7 +44,7 @@ export function Estado({ cargando, error, vacio, children }) {
   return children
 }
 
-/* ---------- Modal y confirmación ---------- */
+
 export function Modal({ titulo, onClose, children, ancho }) {
   useEffect(() => {
     const esc = (e) => e.key === 'Escape' && onClose()
@@ -80,7 +80,7 @@ export function Confirmar({ texto, onSi, onNo, peligro = true }) {
   )
 }
 
-/* ---------- Insignias de estado ---------- */
+
 const COLORES = {
   REGISTRADO: 'gris', EVALUADO: 'azul', EN_LOTE: 'ambar', EN_DESTINO: 'verde',
   ABIERTO: 'azul', CERRADO: 'ambar', ENTREGADO: 'verde',
