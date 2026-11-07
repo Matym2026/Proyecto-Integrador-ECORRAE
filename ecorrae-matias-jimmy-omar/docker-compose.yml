@@ -1,7 +1,3 @@
-# PostgreSQL local para EcoRAEE Cloud (equivale a Amazon RDS PostgreSQL de la Parte I).
-# Al primer arranque ejecuta automáticamente database/01_schema.sql y 02_seed.sql.
-#   docker compose up -d        -> levantar
-#   docker compose down -v      -> borrar todo y volver a los datos de prueba
 services:
   db:
     image: postgres:16
