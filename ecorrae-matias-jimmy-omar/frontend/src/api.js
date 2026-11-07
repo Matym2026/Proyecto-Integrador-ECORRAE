@@ -1,11 +1,11 @@
-// Cliente HTTP del backend. Todas las rutas van a /api (proxy de Vite -> FastAPI).
+
 const BASE = import.meta.env.VITE_API_URL || '/api'
 
 export class ApiError extends Error {
   constructor(mensaje, status, errores = []) {
     super(mensaje)
     this.status = status
-    this.errores = errores // [{campo, mensaje}] cuando el backend rechaza la validación
+    this.errores = errores 
   }
 }
 
