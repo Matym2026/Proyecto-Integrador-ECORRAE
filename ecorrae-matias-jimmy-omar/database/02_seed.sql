@@ -1,9 +1,5 @@
 -- =====================================================================
 -- EcoRAEE Cloud - Datos de prueba
--- Escenario: tres lotes en distintas etapas del ciclo de trazabilidad
---   LOTE-2026-001 -> ya entregado a un gestor de reciclaje (ciclo completo)
---   LOTE-2026-002 -> abierto en Quito Norte, con equipos evaluados
---   LOTE-2026-003 -> abierto en Guayaquil Sur
 -- =====================================================================
 
 INSERT INTO usuarios (nombre, email, rol) VALUES
