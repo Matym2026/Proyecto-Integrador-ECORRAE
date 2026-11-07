@@ -10,7 +10,7 @@ export default function Dispositivos() {
   const filtros = { q: params.get('q') || '', estado: params.get('estado') || '', tipo: params.get('tipo') || '', centro_id: params.get('centro_id') || '' }
   const { datos, error, cargando, recargar } = useCarga(() => api.get('/dispositivos', filtros), [params.toString()])
   const cat = useCatalogos()
-  const [form, setForm] = useState(null) // null | {} (nuevo) | dispositivo (editar)
+  const [form, setForm] = useState(null) 
   const [borrar, setBorrar] = useState(null)
   const toast = useToast()
   const navigate = useNavigate()
