@@ -4,7 +4,7 @@ import { ROLES, TIPOS_CENTRO, TIPOS_DESTINO } from '../constantes'
 import Formulario from '../components/Formulario'
 import { Badge, Confirmar, Estado, Modal, Si, useCarga, useToast } from '../components/ui'
 
-/** Configuración de los catálogos administrables (CRUD completo). */
+
 export const CATALOGOS = {
   centros: {
     titulo: 'Centros de acopio y tratamiento', singular: 'centro',
