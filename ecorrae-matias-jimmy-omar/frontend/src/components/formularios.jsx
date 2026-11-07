@@ -3,7 +3,7 @@ import { api } from '../api'
 import { ESTADOS_FISICOS, RECOMENDACIONES, TIPOS_DISPOSITIVO, etiqueta } from '../constantes'
 import Formulario from './Formulario'
 
-/** Carga centros, destinos y usuarios activos para los <select>. */
+
 export function useCatalogos() {
   const [cat, setCat] = useState({ centros: [], destinos: [], usuarios: [], evaluadores: [] })
   useEffect(() => {
