@@ -1,7 +1,5 @@
 -- =====================================================================
--- EcoRAEE Cloud - Esquema de base de datos (PostgreSQL 14+)
--- Parte II: implementación local. En la Parte I este esquema corre en
--- Amazon RDS PostgreSQL dentro de la subred privada de BD (sg-rds).
+-- EcoRAEE Cloud - Esquema de base de datos 
 -- =====================================================================
 
 DROP TABLE IF EXISTS evidencias   CASCADE;
@@ -123,7 +121,6 @@ CREATE TABLE evaluaciones (
 
 -- ---------------------------------------------------------------------
 -- MOVIMIENTOS: historial de trazabilidad (ingreso, traslados, entrega)
--- Aplica a un dispositivo individual o a un lote completo.
 -- ---------------------------------------------------------------------
 CREATE TABLE movimientos (
     id                 SERIAL PRIMARY KEY,
@@ -148,8 +145,6 @@ CREATE TABLE movimientos (
 
 -- ---------------------------------------------------------------------
 -- EVIDENCIAS: metadatos de archivos (fotos, actas, certificados).
--- El archivo vive en el almacenamiento de objetos (local hoy, S3 mañana);
--- aquí solo se guarda la clave del objeto.
 -- ---------------------------------------------------------------------
 CREATE TABLE evidencias (
     id              SERIAL PRIMARY KEY,
@@ -165,7 +160,7 @@ CREATE TABLE evidencias (
     CONSTRAINT chk_evid_sujeto CHECK (dispositivo_id IS NOT NULL OR lote_id IS NOT NULL)
 );
 
--- Índices para las consultas de trazabilidad
+
 CREATE INDEX idx_dispositivos_estado ON dispositivos(estado);
 CREATE INDEX idx_dispositivos_lote   ON dispositivos(lote_id);
 CREATE INDEX idx_dispositivos_centro ON dispositivos(centro_actual_id);
