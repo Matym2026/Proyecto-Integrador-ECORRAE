@@ -43,7 +43,7 @@ def crear_router_catalogo(prefijo, modelo, esquema_in, esquema_out, entidad, cam
     def eliminar(id_: int, db: Session = Depends(get_db)):
         obj = obtener(db, modelo, id_, entidad)
         db.delete(obj)
-        db.commit()  # si tiene registros relacionados, la FK RESTRICT lo impide -> 409
+        db.commit()  
 
     return router
 
