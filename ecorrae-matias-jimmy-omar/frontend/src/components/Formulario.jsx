@@ -1,12 +1,6 @@
 import { useState } from 'react'
 
-/**
- * Formulario genérico con validación en el cliente.
- * campos: [{ name, label, type: text|email|number|select|checkbox|textarea, required,
- *            minLength, maxLength, min, max, step, pattern, patternMsg, options, ayuda, ancho }]
- * validar(valores) -> { campo: 'mensaje' } para reglas entre campos.
- * Los errores que devuelva el backend (422) también se muestran junto a cada campo.
- */
+
 export function validarCampos(campos, v) {
   const err = {}
   for (const c of campos) {
@@ -54,7 +48,7 @@ export default function Formulario({ campos, inicial = {}, validar, onSubmit, on
     setErr(errores)
     setGeneral(null)
     if (Object.keys(errores).length) return
-    // Normaliza: '' -> null, números a Number
+   
     const datos = {}
     for (const c of campos) {
       let val = v[c.name]
